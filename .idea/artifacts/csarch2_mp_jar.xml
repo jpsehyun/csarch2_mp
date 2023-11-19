@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="csarch2_mp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/csarch2_mp_jar</output-path>
+    <root id="archive" name="csarch2_mp.jar">
+      <element id="module-output" name="csarch2_mp" />
+    </root>
+  </artifact>
+</component>
