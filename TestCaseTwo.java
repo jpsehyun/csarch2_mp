@@ -38,82 +38,82 @@ public int[] getary(){
                 temp[i]= (int)Math.floor(Math.random()*(max-min+1));
                 blockNum = temp[i] % 4;
 
-                if (set0[0] == blockNum){
+                if (set0[0] == temp[i]){
                     setZeroCtr++;
                     tempSet0[0] = setZeroCtr;
                     cacheHit++;
                 }
-                else if (set0[1] == blockNum){
+                else if (set0[1] == temp[i]){
                     setZeroCtr++;
                     tempSet0[1] = setZeroCtr;
                     cacheHit++;
                 }
-                else if (set0[2] == blockNum){
+                else if (set0[2] == temp[i]){
                     setZeroCtr++;
                     tempSet0[2] = setZeroCtr;
                     cacheHit++;
                 }
-                else if (set0[3] == blockNum){
+                else if (set0[3] == temp[i]){
                     setZeroCtr++;
                     tempSet0[3] = setZeroCtr;
                     cacheHit++;
                 }
-                else if (set1[0] == blockNum){
+                else if (set1[0] == temp[i]){
                     setOneCtr++;
                     tempSet1[0] = setOneCtr;
                     cacheHit++;
                 }
-                else if (set1[1] == blockNum){
+                else if (set1[1] == temp[i]){
                     setOneCtr++;
                     tempSet1[1] = setOneCtr;
                     cacheHit++;
                 }
-                else if (set1[2] == blockNum){
+                else if (set1[2] == temp[i]){
                     setOneCtr++;
                     tempSet1[2] = setOneCtr;
                     cacheHit++;
                 }
-                else if (set1[3] == blockNum){
+                else if (set1[3] == temp[i]){
                     setOneCtr++;
                     tempSet1[3] = setOneCtr;
                     cacheHit++;
                 }
-                else if (set2[0] == blockNum){
+                else if (set2[0] == temp[i]){
                     setTwoCtr++;
                     tempSet2[0] = setTwoCtr;
                     cacheHit++;
                 }
-                else if (set2[1] == blockNum){
+                else if (set2[1] == temp[i]){
                     setTwoCtr++;
                     tempSet2[1] = setTwoCtr;
                     cacheHit++;
                 }
-                else if (set2[2] == blockNum){
+                else if (set2[2] == temp[i]){
                     setTwoCtr++;
                     tempSet2[2] = setTwoCtr;
                     cacheHit++;
                 }
-                else if (set2[3] == blockNum){
+                else if (set2[3] == temp[i]){
                     setTwoCtr++;
                     tempSet2[3] = setTwoCtr;
                     cacheHit++;
                 }
-                else if (set3[0] == blockNum){
+                else if (set3[0] == temp[i]){
                     setThreeCtr++;
                     tempSet3[0] = setThreeCtr;
                     cacheHit++;
                 }
-                else if (set3[1] == blockNum){
+                else if (set3[1] == temp[i]){
                     setThreeCtr++;
                     tempSet3[1] = setThreeCtr;
                     cacheHit++;
                 }
-                else if (set3[2] == blockNum){
+                else if (set3[2] == temp[i]){
                     setThreeCtr++;
                     tempSet3[2] = setThreeCtr;
                     cacheHit++;
                 }
-                else if (set3[3] == blockNum){
+                else if (set3[3] == temp[i]){
                     setThreeCtr++;
                     tempSet3[3] = setThreeCtr;
                     cacheHit++;
@@ -137,22 +137,22 @@ public int[] getary(){
                         }
 
                         if (minIndex == 0){
-                            set0[0] = blockNum;
+                            set0[0] = temp[i];
                             setZeroCtr++;
                             tempSet0[0] = setZeroCtr;
                         }
                         else if (minIndex == 1){
-                            set0[1] = blockNum;
+                            set0[1] = temp[i];
                             setZeroCtr++;
                             tempSet0[1] = setZeroCtr;
                         }
                         else if (minIndex == 2){
-                            set0[2] = blockNum;
+                            set0[2] = temp[i];
                             setZeroCtr++;
                             tempSet0[2] = setZeroCtr;
                         }
                         else{
-                            set0[3] = blockNum;
+                            set0[3] = temp[i];
                             setZeroCtr++;
                             tempSet0[3] = setZeroCtr;
                         }
@@ -171,22 +171,22 @@ public int[] getary(){
                         }
 
                         if (minIndex == 0){
-                            set1[0] = i;
+                            set1[0] = temp[i];
                             setOneCtr++;
                             tempSet1[0] = setOneCtr;
                         }
                         else if (minIndex == 1){
-                            set1[1] = i;
+                            set1[1] = temp[i];
                             setOneCtr++;
                             tempSet1[1] = setOneCtr;
                         }
                         else if (minIndex == 2){
-                            set1[2] = i;
+                            set1[2] = temp[i];
                             setOneCtr++;
                             tempSet1[2] = setOneCtr;
                         }
                         else {
-                            set1[3] = i;
+                            set1[3] = temp[i];
                             setOneCtr++;
                             tempSet1[3] = setOneCtr;
                         }
@@ -204,22 +204,22 @@ public int[] getary(){
                         }
 
                         if (minIndex == 0){
-                            set2[0] = i;
+                            set2[0] = temp[i];
                             setTwoCtr++;
                             tempSet2[0] = setTwoCtr;
                         }
                         else if (minIndex == 1){
-                            set2[1] = i;
+                            set2[1] = temp[i];
                             setTwoCtr++;
                             tempSet2[1] = setTwoCtr;
                         }
                         else if (minIndex == 2){
-                            set2[2] = i;
+                            set2[2] = temp[i];
                             setTwoCtr++;
                             tempSet2[2] = setTwoCtr;
                         }
                         else{
-                            set2[3] = i;
+                            set2[3] = temp[i];
                             setTwoCtr++;
                             tempSet2[3] = setTwoCtr;
                         }
@@ -238,22 +238,22 @@ public int[] getary(){
                         }
 
                         if (minIndex == 0){
-                            set3[0] = i;
+                            set3[0] = temp[i];
                             setThreeCtr++;
                             tempSet3[0] = setThreeCtr;
                         }
                         else if (minIndex == 1){
-                            set3[1] = i;
+                            set3[1] = temp[i];
                             setThreeCtr++;
                             tempSet3[1] = setThreeCtr;
                         }
                         else if (minIndex == 2){
-                            set3[2] = i;
+                            set3[2] = temp[i];
                             setThreeCtr++;
                             tempSet3[2] = setThreeCtr;
                         }
                         else{
-                            set3[3] = i;
+                            set3[3] = temp[i];
                             setThreeCtr++;
                             tempSet3[3] = setThreeCtr;
                         }
