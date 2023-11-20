@@ -34,7 +34,7 @@ public int[] getary(){
 
         int min=0;
         int max= this.memoryBlockSize -1;
-            for (int i = 0; i < 63; i++) {
+            for (int i = 0; i < 64; i++) {
                 temp[i]= (int)Math.floor(Math.random()*(max-min+1));
                 blockNum = temp[i] % 4;
 

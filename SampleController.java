@@ -180,14 +180,13 @@ public class SampleController {
 
             // Prints the input String
             int [] temp1 = new int[64];
+            String z = "";
             for (int i = 0; i < 64; i++) {
                 temp1 = t2.getary();
-                String z =  " " + String.valueOf(temp1[i]);
+                z =  z + " " + String.valueOf(temp1[i]);
                 inputTa.setText(z);
             }
-            String temp = inputTa.getText();
-            inputTa.setText(temp+ "\n (x4)");
-
+            
             // Memory Access Count
             int MAC = (t2.getCacheMiss()) + (t2.getCacheHit());
             memoryAccessCountTf.setText(String.valueOf(MAC));
