@@ -14,7 +14,7 @@ public class TestCaseTwo {
     public void setMemoryBlockSize(int x){
         this.memoryBlockSize = x;
     }
-public int[] getary(){
+    public int[] getary(){
     return temp;
 }
     public void calculate() {
