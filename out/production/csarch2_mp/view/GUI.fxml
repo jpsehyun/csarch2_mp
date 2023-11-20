@@ -143,7 +143,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="tc2Btn" contentDisplay="CENTER" mnemonicParsing="false" text="Testcase 2" textOverrun="CENTER_ELLIPSIS">
+                  <Button fx:id="tc2Btn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#testCaseTwo" text="Testcase 2" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
