@@ -11,6 +11,24 @@ public class TestCaseTwo {
     int cacheHit = 0;
     int cacheMiss = 0;
 
+    // ArrayList for holding the Tracing of each blocks
+    ArrayList<Integer> s0B0_trace = new ArrayList<>();
+    ArrayList<Integer> s0B1_trace = new ArrayList<>();
+    ArrayList<Integer> s0B2_trace = new ArrayList<>();
+    ArrayList<Integer> s0B3_trace = new ArrayList<>();
+    ArrayList<Integer> s1B0_trace = new ArrayList<>();
+    ArrayList<Integer> s1B1_trace = new ArrayList<>();
+    ArrayList<Integer> s1B2_trace = new ArrayList<>();
+    ArrayList<Integer> s1B3_trace = new ArrayList<>();
+    ArrayList<Integer> s2B0_trace = new ArrayList<>();
+    ArrayList<Integer> s2B1_trace = new ArrayList<>();
+    ArrayList<Integer> s2B2_trace = new ArrayList<>();
+    ArrayList<Integer> s2B3_trace = new ArrayList<>();
+    ArrayList<Integer> s3B0_trace = new ArrayList<>();
+    ArrayList<Integer> s3B1_trace = new ArrayList<>();
+    ArrayList<Integer> s3B2_trace = new ArrayList<>();
+    ArrayList<Integer> s3B3_trace = new ArrayList<>();
+
     public void setMemoryBlockSize(int x){
         this.memoryBlockSize = x;
     }
@@ -42,81 +60,97 @@ public class TestCaseTwo {
                     setZeroCtr++;
                     tempSet0[0] = setZeroCtr;
                     cacheHit++;
+                    s0B0_trace.add(temp[i]);
                 }
                 else if (set0[1] == temp[i]){
                     setZeroCtr++;
                     tempSet0[1] = setZeroCtr;
                     cacheHit++;
+                    s0B1_trace.add(temp[i]);
                 }
                 else if (set0[2] == temp[i]){
                     setZeroCtr++;
                     tempSet0[2] = setZeroCtr;
                     cacheHit++;
+                    s0B2_trace.add(temp[i]);
                 }
                 else if (set0[3] == temp[i]){
                     setZeroCtr++;
                     tempSet0[3] = setZeroCtr;
                     cacheHit++;
+                    s0B3_trace.add(temp[i]);
                 }
                 else if (set1[0] == temp[i]){
                     setOneCtr++;
                     tempSet1[0] = setOneCtr;
                     cacheHit++;
+                    s1B0_trace.add(temp[i]);
                 }
                 else if (set1[1] == temp[i]){
                     setOneCtr++;
                     tempSet1[1] = setOneCtr;
                     cacheHit++;
+                    s1B1_trace.add(temp[i]);
                 }
                 else if (set1[2] == temp[i]){
                     setOneCtr++;
                     tempSet1[2] = setOneCtr;
                     cacheHit++;
+                    s1B2_trace.add(temp[i]);
                 }
                 else if (set1[3] == temp[i]){
                     setOneCtr++;
                     tempSet1[3] = setOneCtr;
                     cacheHit++;
+                    s1B3_trace.add(temp[i]);
                 }
                 else if (set2[0] == temp[i]){
                     setTwoCtr++;
                     tempSet2[0] = setTwoCtr;
                     cacheHit++;
+                    s2B0_trace.add(temp[i]);
                 }
                 else if (set2[1] == temp[i]){
                     setTwoCtr++;
                     tempSet2[1] = setTwoCtr;
                     cacheHit++;
+                    s2B1_trace.add(temp[i]);
                 }
                 else if (set2[2] == temp[i]){
                     setTwoCtr++;
                     tempSet2[2] = setTwoCtr;
                     cacheHit++;
+                    s2B2_trace.add(temp[i]);
                 }
                 else if (set2[3] == temp[i]){
                     setTwoCtr++;
                     tempSet2[3] = setTwoCtr;
                     cacheHit++;
+                    s2B3_trace.add(temp[i]);
                 }
                 else if (set3[0] == temp[i]){
                     setThreeCtr++;
                     tempSet3[0] = setThreeCtr;
                     cacheHit++;
+                    s3B0_trace.add(temp[i]);
                 }
                 else if (set3[1] == temp[i]){
                     setThreeCtr++;
                     tempSet3[1] = setThreeCtr;
                     cacheHit++;
+                    s3B1_trace.add(temp[i]);
                 }
                 else if (set3[2] == temp[i]){
                     setThreeCtr++;
                     tempSet3[2] = setThreeCtr;
                     cacheHit++;
+                    s3B2_trace.add(temp[i]);
                 }
                 else if (set3[3] == temp[i]){
                     setThreeCtr++;
                     tempSet3[3] = setThreeCtr;
                     cacheHit++;
+                    s3B3_trace.add(temp[i]);
                 }
 
                 else{
@@ -140,21 +174,25 @@ public class TestCaseTwo {
                             set0[0] = temp[i];
                             setZeroCtr++;
                             tempSet0[0] = setZeroCtr;
+                            s0B0_trace.add(temp[i]);
                         }
                         else if (minIndex == 1){
                             set0[1] = temp[i];
                             setZeroCtr++;
                             tempSet0[1] = setZeroCtr;
+                            s0B1_trace.add(temp[i]);
                         }
                         else if (minIndex == 2){
                             set0[2] = temp[i];
                             setZeroCtr++;
                             tempSet0[2] = setZeroCtr;
+                            s0B2_trace.add(temp[i]);
                         }
                         else{
                             set0[3] = temp[i];
                             setZeroCtr++;
                             tempSet0[3] = setZeroCtr;
+                            s0B3_trace.add(temp[i]);
                         }
 
                     }
@@ -174,21 +212,25 @@ public class TestCaseTwo {
                             set1[0] = temp[i];
                             setOneCtr++;
                             tempSet1[0] = setOneCtr;
+                            s1B0_trace.add(temp[i]);
                         }
                         else if (minIndex == 1){
                             set1[1] = temp[i];
                             setOneCtr++;
                             tempSet1[1] = setOneCtr;
+                            s1B1_trace.add(temp[i]);
                         }
                         else if (minIndex == 2){
                             set1[2] = temp[i];
                             setOneCtr++;
                             tempSet1[2] = setOneCtr;
+                            s1B2_trace.add(temp[i]);
                         }
                         else {
                             set1[3] = temp[i];
                             setOneCtr++;
                             tempSet1[3] = setOneCtr;
+                            s1B3_trace.add(temp[i]);
                         }
                     }
 
@@ -207,21 +249,25 @@ public class TestCaseTwo {
                             set2[0] = temp[i];
                             setTwoCtr++;
                             tempSet2[0] = setTwoCtr;
+                            s2B0_trace.add(temp[i]);
                         }
                         else if (minIndex == 1){
                             set2[1] = temp[i];
                             setTwoCtr++;
                             tempSet2[1] = setTwoCtr;
+                            s2B1_trace.add(temp[i]);
                         }
                         else if (minIndex == 2){
                             set2[2] = temp[i];
                             setTwoCtr++;
                             tempSet2[2] = setTwoCtr;
+                            s2B2_trace.add(temp[i]);
                         }
                         else{
                             set2[3] = temp[i];
                             setTwoCtr++;
                             tempSet2[3] = setTwoCtr;
+                            s2B3_trace.add(temp[i]);
                         }
 
                     }
@@ -241,21 +287,25 @@ public class TestCaseTwo {
                             set3[0] = temp[i];
                             setThreeCtr++;
                             tempSet3[0] = setThreeCtr;
+                            s3B0_trace.add(temp[i]);
                         }
                         else if (minIndex == 1){
                             set3[1] = temp[i];
                             setThreeCtr++;
                             tempSet3[1] = setThreeCtr;
+                            s3B1_trace.add(temp[i]);
                         }
                         else if (minIndex == 2){
                             set3[2] = temp[i];
                             setThreeCtr++;
                             tempSet3[2] = setThreeCtr;
+                            s3B2_trace.add(temp[i]);
                         }
                         else{
                             set3[3] = temp[i];
                             setThreeCtr++;
                             tempSet3[3] = setThreeCtr;
+                            s3B3_trace.add(temp[i]);
                         }
 
 
@@ -274,6 +324,31 @@ public class TestCaseTwo {
         al.add(set1);
         al.add(set2);
         al.add(set3);
+
+        return al;
+    }
+
+    public ArrayList<ArrayList<Integer>> getTrace(){
+        ArrayList<ArrayList<Integer>> al = new ArrayList<>();
+        al.add(s0B0_trace);
+        al.add(s0B1_trace);
+        al.add(s0B2_trace);
+        al.add(s0B3_trace);
+
+        al.add(s1B0_trace);
+        al.add(s1B1_trace);
+        al.add(s1B2_trace);
+        al.add(s1B3_trace);
+
+        al.add(s2B0_trace);
+        al.add(s2B1_trace);
+        al.add(s2B2_trace);
+        al.add(s2B3_trace);
+
+        al.add(s3B0_trace);
+        al.add(s3B1_trace);
+        al.add(s3B2_trace);
+        al.add(s3B3_trace);
 
         return al;
     }

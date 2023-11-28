@@ -68,11 +68,17 @@ public class SampleController {
     public TextArea s3B3;
 
     // buttons
-    @FXML public Button toggleBtn;
+    @FXML public Button traceBtn;
     @FXML public Button tc1Btn;
 
+    boolean toggleBool = true;
+
+    ArrayList<ArrayList<Integer>> trace = new ArrayList<>();
+    ArrayList<int[]> al = new ArrayList<>();
     @FXML
     private void testCaseOne() {
+
+        al.clear();
 
         if (memoryBlockTf.getText().trim().isEmpty()) {
             memoryBlockTf.setStyle("-fx-background-color: red");
@@ -82,7 +88,6 @@ public class SampleController {
 
         if (!(memoryBlockTf.getText().trim().isEmpty())) {
             inputTa.setText("");
-            ArrayList<int[]> al = new ArrayList<>();
             TestCaseOne t1 = new TestCaseOne();
 
             t1.setMemoryBlockSize(Integer.parseInt(memoryBlockTf.getText()));
@@ -148,12 +153,17 @@ public class SampleController {
             s3B1.setText(String.valueOf(al.get(3)[1]));
             s3B2.setText(String.valueOf(al.get(3)[2]));
             s3B3.setText(String.valueOf(al.get(3)[3]));
+
+            trace = t1.getTrace();
         }
     }
 
     @FXML public Button tc2Btn;
     @FXML
     private void testCaseTwo() {
+
+        al.clear();
+
         if (memoryBlockTf.getText().trim().isEmpty()) {
             memoryBlockTf.setStyle("-fx-background-color: red");
         } else {
@@ -162,7 +172,6 @@ public class SampleController {
 
         if (!(memoryBlockTf.getText().trim().isEmpty())) {
             inputTa.setText("");
-            ArrayList<int[]> al = new ArrayList<>();
             TestCaseTwo t2 = new TestCaseTwo();
 
             t2.setMemoryBlockSize(Integer.parseInt(memoryBlockTf.getText()));
@@ -228,11 +237,16 @@ public class SampleController {
             s3B1.setText(String.valueOf(al.get(3)[1]));
             s3B2.setText(String.valueOf(al.get(3)[2]));
             s3B3.setText(String.valueOf(al.get(3)[3]));
+
+            trace = t2.getTrace();
         }
     }
 
     @FXML
     private void testCaseThree(){
+
+        al.clear();
+
         if (memoryBlockTf.getText().trim().isEmpty()) {
             memoryBlockTf.setStyle("-fx-background-color: red");
         } else {
@@ -256,7 +270,6 @@ public class SampleController {
             inputTa.setText(String.valueOf(a));
 
             t3.calculate();
-            ArrayList<int[]> al = new ArrayList<>();
             al = t3.getSet();
 
             s0B0.setText(String.valueOf(al.get(0)[0]));
@@ -306,6 +319,71 @@ public class SampleController {
             // Ttotal = Hit (32 * 1ns) + MISS (1ns + 32 * 10ns)
             float Ttotal = hitCtr * 32 + missCtr * (1 + 32 * 10);
             totalMATTf.setText(String.valueOf(Ttotal));
+
+            trace = t3.getTrace();
+        }
+    }
+
+
+
+    @FXML
+    public void toggleTrace(){
+
+        if (memoryBlockTf.getText().trim().isEmpty()) {
+            memoryBlockTf.setStyle("-fx-background-color: red");
+        } else {
+            memoryBlockTf.setStyle("-fx-background-color: white");
+        }
+
+        if (!(trace.isEmpty())) {
+            String[] x = new String[16];
+            for (int i = 0; i < 16; i++) {
+                x[i] = trace.get(i).toString();
+            }
+            if (toggleBool) {
+                s0B0.setText(x[0]);
+                s0B1.setText(x[1]);
+                s0B2.setText(x[2]);
+                s0B3.setText(x[3]);
+
+                s1B0.setText(x[4]);
+                s1B1.setText(x[5]);
+                s1B2.setText(x[6]);
+                s1B3.setText(x[7]);
+
+                s2B0.setText(x[8]);
+                s2B1.setText(x[9]);
+                s2B2.setText(x[10]);
+                s2B3.setText(x[11]);
+
+                s3B0.setText(x[12]);
+                s3B1.setText(x[13]);
+                s3B2.setText(x[14]);
+                s3B3.setText(x[15]);
+
+                toggleBool = false;
+            } else {
+                s0B0.setText(String.valueOf(al.get(0)[0]));
+                s0B1.setText(String.valueOf(al.get(0)[1]));
+                s0B2.setText(String.valueOf(al.get(0)[2]));
+                s0B3.setText(String.valueOf(al.get(0)[3]));
+
+                s1B0.setText(String.valueOf(al.get(1)[0]));
+                s1B1.setText(String.valueOf(al.get(1)[1]));
+                s1B2.setText(String.valueOf(al.get(1)[2]));
+                s1B3.setText(String.valueOf(al.get(1)[3]));
+
+                s2B0.setText(String.valueOf(al.get(2)[0]));
+                s2B1.setText(String.valueOf(al.get(2)[1]));
+                s2B2.setText(String.valueOf(al.get(2)[2]));
+                s2B3.setText(String.valueOf(al.get(2)[3]));
+
+                s3B0.setText(String.valueOf(al.get(3)[0]));
+                s3B1.setText(String.valueOf(al.get(3)[1]));
+                s3B2.setText(String.valueOf(al.get(3)[2]));
+                s3B3.setText(String.valueOf(al.get(3)[3]));
+                toggleBool = true;
+            }
         }
     }
 }
