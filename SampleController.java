@@ -5,6 +5,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -384,6 +387,46 @@ public class SampleController {
                 s3B3.setText(String.valueOf(al.get(3)[3]));
                 toggleBool = true;
             }
+        }
+    }
+    @FXML public Button txtBtn;
+    @FXML
+    public void outputTxt(){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("cache_trace.txt"))){
+            //INFORMATION
+            writer.write("# of Cache Block: " + cacheBlockTf.getText());
+            writer.newLine();
+            writer.write("# of Memory Blocks: " + memoryBlockTf.getText());
+            writer.newLine();
+            writer.write("Input String: " + inputTa.getText());
+            writer.newLine();
+
+            //MAIN TRACKING - to be refined
+            for(int i = 0; i < trace.size(); i++) {
+                writer.write(String.valueOf(trace.get(i)));
+                writer.newLine();
+            }
+
+            //RESULT
+            writer.write("Memory Access Count: " + memoryAccessCountTf.getText());
+            writer.newLine();
+            writer.write("Cache Hit Count: " + cacheHitCountTf.getText());
+            writer.newLine();
+            writer.write("Cache Miss Count: " + cacheMissCountTf.getText());
+            writer.newLine();
+            writer.write("Cache Hit Rate: " + cacheHitRateTf.getText());
+            writer.newLine();
+            writer.write("Cache Miss Rate: " + cacheMissRateTf.getText());
+            writer.newLine();
+            writer.write("Avg Memory Access time: " + averageMATTf.getText());
+            writer.newLine();
+            writer.write("Total Memory Access time: " + totalMATTf.getText());
+            writer.newLine();
+
+            //just a cout to tell IDE that we saved.
+            System.out.println("Cache saved to cache_trace.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
