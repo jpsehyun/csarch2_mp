@@ -4,13 +4,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import sun.reflect.generics.tree.Tree;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class SampleController {
     @FXML
@@ -401,11 +401,50 @@ public class SampleController {
             writer.write("Input String: " + inputTa.getText());
             writer.newLine();
 
-            //MAIN TRACKING - to be refined
-            for(int i = 0; i < trace.size(); i++) {
-                writer.write(String.valueOf(trace.get(i)));
-                writer.newLine();
+            boolean hasElements = true;
+            int iterator = 0;   //USED TO ITERATE THROUGH EVERY ARRAYLIST
+            int stepper = 1;    //REFERS TO THE CURRENT STEP
+            int maxMem = Integer.parseInt(memoryBlockTf.getText()); //CHECKS THE MAX MEMORY
+            int memIterator = 0;    //CHECKS THE CURRENT MEMORY INPUT
+
+            while(hasElements){
+                Map<Integer, Integer> mappedCache = new HashMap<>();
+                for(int i = 0; i < trace.size(); i++){
+                    if(iterator < trace.get(i).size()){
+                        Integer element = trace.get(i).get(iterator);
+                        mappedCache.put(i, element);
+                    }
+//                    else {
+//                        mappedCache.put(-1, -1);
+//                    }
+                }
+
+                for(int j = 0; j < mappedCache.size(); j++){
+                    for(Map.Entry<Integer, Integer> entry : mappedCache.entrySet()) {
+                        if(entry.getValue() == memIterator){
+                            System.out.println(stepper + ".) " + entry.getValue() + " gets stored to SET " + entry.getKey() / 4 + ", BLOCK " + entry.getKey() % 4);
+//                            writer.write(stepper + ".) " + entry.getValue() + " gets stored to SET " + entry.getKey() / 4 + ", BLOCK " + entry.getKey() % 4);
+//                            writer.newLine();
+                            System.out.println(memIterator);
+                            if(memIterator + 1 < maxMem) {
+                                memIterator++;
+                            } else {
+                                memIterator = 0;
+                            }
+                            stepper++;
+                            System.out.println(stepper);
+                        }
+                    }
+                }
+
+                iterator++;
+                if(stepper > Integer.parseInt(memoryBlockTf.getText()) * 4){
+                    System.out.println("STOP");
+                    System.out.println(stepper);
+                    hasElements = false;
+                }
             }
+
 
             //RESULT
             writer.write("Memory Access Count: " + memoryAccessCountTf.getText());
