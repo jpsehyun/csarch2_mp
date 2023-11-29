@@ -73,6 +73,8 @@ public class SampleController {
     // buttons
     @FXML public Button traceBtn;
     @FXML public Button tc1Btn;
+    @FXML public Button tc2Btn;
+    @FXML public Button tc3Btn;
 
     boolean toggleBool = true;
 
@@ -160,8 +162,6 @@ public class SampleController {
             trace = t1.getTrace();
         }
     }
-
-    @FXML public Button tc2Btn;
     @FXML
     private void testCaseTwo() {
 
@@ -292,6 +292,7 @@ public class SampleController {
             s3B2.setText(String.valueOf(al.get(3)[2]));
             s3B3.setText(String.valueOf(al.get(3)[3]));
 
+            // Miss Count
             int missCtr = t3.getCacheMiss();
             cacheMissCountTf.setText(String.valueOf(missCtr));
 
