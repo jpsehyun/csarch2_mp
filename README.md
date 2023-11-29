@@ -26,5 +26,4 @@ Example) input = 8, 0 | 1,2,3,4,5,6 | 1,2,3,4,5,6 | 7 ~ 15 {x4}
 
 For every test cases, the program first checks whether the current memory block already exist in any of the cache memory block.  
 If it does exist -> Increase the counter for that cache block and move to next memory block  
-If it doesn't exist -> Calculate the cache memory set to be assigned into using (4 % block num), after which the program looks for the block in the corresponding set with the lowest counter.  
-                       Finally, the program assigns the block number to the cache block with the lowest counter, and increase it.
+If it doesn't exist -> Calculate the cache memory set to be assigned into using (4 % block num), after which the program looks for the block in the corresponding set with the lowest counter. Finally, the program assigns the block number to the cache block with the lowest counter, and increase it.
