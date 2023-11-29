@@ -162,7 +162,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="txtBtn" contentDisplay="CENTER" mnemonicParsing="false" text=".txt" />
+                  <Button fx:id="txtBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#outputTxt" text=".txt" />
                </children>
             </HBox>
          </children>
