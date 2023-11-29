@@ -5,5 +5,9 @@ GONZALES, Bryant Kimm Custodio
 PARK, Sehyun  
 SILLONA, John Eugene Justiniano
 
-try going through these steps  
-out -> production -> csarch2_mp -> cmd and run java Launcher
+****************To Run the Program****************    
+
+1. Out -> Production -> csarch2_mp -> cmd and run java Launcher
+2. Or simply run the project in VSCODE or Intellij IDE
+
+****************Analysis of the Program****************   
