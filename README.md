@@ -12,6 +12,7 @@ SILLONA, John Eugene Justiniano
 1. Out -> Production -> csarch2_mp -> cmd and run java Launcher
 2. Or simply run the project in VSCODE or Intellij IDE
 3. If the code doesn't run, please try inputting the following command in cmd
+   
    java --module-path %PATH_TO_FX_LIB% --add-modules javafx.controls --add-modules javafx.fxml -jar csarch2_mp.jar  
 
 ****************Analysis of the Program****************   
